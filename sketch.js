@@ -3,7 +3,6 @@ var Dog,DogSprite;
 var happyDog,HappyDogSprite;
 var database;
 var foodS, foodStock;
-var score=20;
 
 function preload()
 {
@@ -37,18 +36,17 @@ function draw() {
   stroke("black")
   text("PRESS UP_ARROW TO FEED MY DOG JUSTIN", 10,30);
 
-  text("REMAINING FOOD  -  " +score,50,150);
+  text("REMAINING FOOD  -  " +foodS,50,150);
 
-  if(keyWentDown(DOWN_ARROW)){
+  if(keyWentDown(UP_ARROW)){
     writeStock(foodS);
     DogSprite.addImage(Dog);
   }
 
   if(keyWentUp(UP_ARROW)){
     DogSprite.addImage(happyDog);
-    score--
   }
-
+  
 }
 
 function readStock(data){
